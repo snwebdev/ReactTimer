@@ -47,6 +47,9 @@ var Countdown = React.createClass({
     }, 1000);
   },
   handleSetCountdown: function(seconds) {
+    if (isNaN(seconds)){
+      seconds = 60;
+    };
     this.setState({
       count: seconds,
       countdownStatus: 'started'
